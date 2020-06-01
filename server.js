@@ -16,6 +16,12 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((e) => console.log("MongoDB could not be connected due to ", e));
 
+fastify.register(require("fastify-cors"), {
+  origin: true,
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type", "Origin", "Authorization", "Accept"],
+});
+
 //handles GET / request
 fastify.get("/", async (request, res) => {
   try {
