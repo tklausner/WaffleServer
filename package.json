@@ -8,12 +8,17 @@
     "fastify": "^2.14.1",
     "fastify-cors": "^3.0.3",
     "fastify-static": "^2.7.0",
-    "mongoose": "^5.9.16"
+    "mongoose": "^5.9.16",
+    "serve": "^11.3.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
