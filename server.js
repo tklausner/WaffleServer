@@ -4,7 +4,7 @@ const path = require("path");
 const routes = require("./routes");
 
 //connect to mongodb atlas
-
+console.log(`${process.env.MONGO_ATLAS_UN}:${process.env.MONGO_ATLAS_PW}`);
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_ATLAS_UN}:${process.env.MONGO_ATLAS_PW}@wafflecluster-u8a3o.mongodb.net/test?retryWrites=true&w=majority`
