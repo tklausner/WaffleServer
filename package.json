@@ -21,7 +21,7 @@
     "heroku-postbuild": "npm run build"
   },
   "engines": {
-    "node": "12.16.x"
+    "node": "12.16.1"
   },
   "repository": {
     "type": "git",
