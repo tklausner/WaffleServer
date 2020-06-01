@@ -11,7 +11,7 @@ const {
 
 mongoose
   .connect(
-    `mongodb+srv://${MONGO_ATLAS_UN}:${MONGO_ATLAS_PW}@wafflecluster-u8a3o.mongodb.net/test?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.MONGO_ATLAS_UN}:${process.env.MONGO_ATLAS_PW}@wafflecluster-u8a3o.mongodb.net/test?retryWrites=true&w=majority`
   )
   .then(() => console.log("MongoDB connected"))
   .catch((e) => console.log("MongoDB could not be connected due to ", e));
