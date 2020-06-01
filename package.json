@@ -20,6 +20,9 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "12.16.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tklausner/WaffleServer.git"
