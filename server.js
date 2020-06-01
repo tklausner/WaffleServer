@@ -3,10 +3,6 @@ const fastify = require("fastify")();
 const path = require("path");
 const routes = require("./routes");
 
-const {
-  parsed: { MONGO_ATLAS_PW, MONGO_ATLAS_UN },
-} = require("dotenv").config();
-
 //connect to mongodb atlas
 
 mongoose
