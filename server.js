@@ -3,16 +3,11 @@ const fastify = require("fastify")();
 const path = require("path");
 const routes = require("./routes");
 
-const {
-  parsed: { MONGO_ATLAS_PW, MONGO_ATLAS_UN },
-} = require("dotenv").config();
+require("dotenv").config();
 
 //connect to mongodb atlas
-
 mongoose
-  .connect(
-    `mongodb+srv://${MONGO_ATLAS_UN}:${MONGO_ATLAS_PW}@wafflecluster-u8a3o.mongodb.net/test?retryWrites=true&w=majority`
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((e) => console.log("MongoDB could not be connected due to ", e));
 

@@ -44,4 +44,32 @@ const updatePost = async (req, res) => {
   }
 };
 
-module.exports = { fetchPosts, addPost, deletePost, updatePost };
+const fetchPostById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const posts = await Post.findById(id);
+    return posts;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const fetchPostsByCategory = async (req, res) => {
+  try {
+    const { category } = req.params;
+    const posts = await Post.find({ category: category });
+    console.log(posts);
+    return posts;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = {
+  fetchPosts,
+  addPost,
+  deletePost,
+  updatePost,
+  fetchPostById,
+  fetchPostsByCategory,
+};
