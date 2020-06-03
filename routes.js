@@ -21,7 +21,7 @@ const {
   addFeed,
   deleteFeed,
   updateFeed,
-} = require("./controllers/user");
+} = require("./controllers/feed");
 
 // ALL API ROUTES
 

@@ -1,4 +1,4 @@
-const Feed = require("../models/feedd");
+const Feed = require("../models/feed");
 
 // FEED CONTROLLER
 
