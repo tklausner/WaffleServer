@@ -15,6 +15,14 @@ const {
   updateExplore,
 } = require("./controllers/explore");
 
+const {
+  fetchFeeds,
+  fetchFeedById,
+  addFeed,
+  deleteFeed,
+  updateFeed,
+} = require("./controllers/feed");
+
 // ALL API ROUTES
 
 const routes = [
@@ -72,6 +80,31 @@ const routes = [
     method: "GET",
     url: "/api/explore/:id",
     handler: fetchExploreById,
+  },
+  {
+    method: "GET",
+    url: "/api/feed",
+    handler: fetchFeeds,
+  },
+  {
+    method: "POST",
+    url: "/api/feed",
+    handler: addFeed,
+  },
+  {
+    method: "DELETE",
+    url: "/api/feed/:id",
+    handler: deleteFeed,
+  },
+  {
+    method: "PUT",
+    url: "/api/feed/:id",
+    handler: updateFeed,
+  },
+  {
+    method: "GET",
+    url: "/api/feed/:id",
+    handler: fetchFeedById,
   },
 ];
 
