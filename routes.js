@@ -3,6 +3,8 @@ const {
   addPost,
   deletePost,
   updatePost,
+  fetchPostById,
+  fetchPostsByCategory,
 } = require("./controllers/post");
 
 // ALL API ROUTES
@@ -27,6 +29,16 @@ const routes = [
     method: "PUT",
     url: "/api/posts/:id",
     handler: updatePost,
+  },
+  {
+    method: "GET",
+    url: "/api/posts/:id",
+    handler: fetchPostById,
+  },
+  {
+    method: "GET",
+    url: "/api/posts/category/:category",
+    handler: fetchPostsByCategory,
   },
 ];
 
