@@ -7,7 +7,7 @@ require("dotenv").config();
 
 //connect to mongodb atlas
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((e) => console.log("MongoDB could not be connected due to ", e));
 
