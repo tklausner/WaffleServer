@@ -7,6 +7,14 @@ const {
   fetchPostsByCategory,
 } = require("./controllers/post");
 
+const {
+  fetchExplores,
+  fetchExploreById,
+  addExplore,
+  deleteExplore,
+  updateExplore,
+} = require("./controllers/explore");
+
 // ALL API ROUTES
 
 const routes = [
@@ -39,6 +47,31 @@ const routes = [
     method: "GET",
     url: "/api/posts/category/:category",
     handler: fetchPostsByCategory,
+  },
+  {
+    method: "GET",
+    url: "/api/explore",
+    handler: fetchExplores,
+  },
+  {
+    method: "POST",
+    url: "/api/explore",
+    handler: addExplore,
+  },
+  {
+    method: "DELETE",
+    url: "/api/explore/:id",
+    handler: deleteExplore,
+  },
+  {
+    method: "PUT",
+    url: "/api/explore/:id",
+    handler: updateExplore,
+  },
+  {
+    method: "GET",
+    url: "/api/explore/:id",
+    handler: fetchExploreById,
   },
 ];
 
