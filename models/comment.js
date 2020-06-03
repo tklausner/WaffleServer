@@ -8,8 +8,5 @@ var CommentSchema = new mongoose.Schema({
   username: String,
   content: String,
 });
-
-var Comment = mongoose.model("Comment", CommentSchema);
-
 // Export the Mongoose model
-module.exports = { Comment, CommentSchema };
+module.exports = mongoose.model("Comment", CommentSchema);

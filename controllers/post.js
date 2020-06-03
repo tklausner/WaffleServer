@@ -1,4 +1,4 @@
-import { Post } from "../models/post";
+const Post = require("../models/post");
 
 // POST CONTROLLER
 
