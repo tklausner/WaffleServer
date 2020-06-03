@@ -1,7 +1,7 @@
 // Load required packages
 var mongoose = require("mongoose");
 
-const { PostSchema } = require("./post");
+import { PostSchema } from "./post";
 
 // Define USER SCHEMA
 var UserSchema = new mongoose.Schema({

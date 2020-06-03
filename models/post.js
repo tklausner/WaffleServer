@@ -1,7 +1,7 @@
 // Load required packages
 var mongoose = require("mongoose");
 
-const { CommentSchema } = require("./comment");
+import { CommentSchema } from "./comment";
 const root = "";
 
 // Define POST SCHEMA
@@ -9,8 +9,8 @@ var PostSchema = new mongoose.Schema({
   user_id: String,
   username: String,
   category: String,
-  profile: { type: String, get: (v) => `${root}${v}` },
-  image: { type: String, get: (v) => `${root}${v}` },
+  profile: { type: String },
+  image: { type: String },
   description: String,
   value: Number,
   waffles_remaining: Number,
