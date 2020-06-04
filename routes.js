@@ -31,6 +31,14 @@ const {
   updateLiked,
 } = require("./controllers/liked");
 
+const {
+  fetchUsers,
+  fetchUserById,
+  addUser,
+  deleteUser,
+  updateUser,
+} = require("./controllers/user");
+
 // ALL API ROUTES
 
 const routes = [
@@ -138,6 +146,31 @@ const routes = [
     method: "GET",
     url: "/api/liked/:id",
     handler: fetchLikedById,
+  },
+  {
+    method: "GET",
+    url: "/api/users",
+    handler: fetchUsers,
+  },
+  {
+    method: "POST",
+    url: "/api/users",
+    handler: addUser,
+  },
+  {
+    method: "DELETE",
+    url: "/api/users/:id",
+    handler: deleteUser,
+  },
+  {
+    method: "PUT",
+    url: "/api/users/:id",
+    handler: updateUser,
+  },
+  {
+    method: "GET",
+    url: "/api/users/:id",
+    handler: fetchUserById,
   },
 ];
 
