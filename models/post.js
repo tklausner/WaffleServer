@@ -21,4 +21,6 @@ var PostSchema = new mongoose.Schema({
 });
 
 // Export the Mongoose model
-module.exports = mongoose.model("Post", PostSchema);
+var Post = mongoose.model("Post", PostSchema);
+
+module.exports = { Post, PostSchema };
