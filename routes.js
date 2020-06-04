@@ -8,20 +8,12 @@ const {
 } = require("./controllers/post");
 
 const {
-  fetchUsers,
-  fetchUserById,
-  addUser,
-  deleteUser,
-  updateUser,
-} = require("./controllers/user");
-
-const {
-  fetchLikeds,
-  fetchLikedById,
-  addLiked,
-  deleteLiked,
-  updateLiked,
-} = require("./controllers/liked");
+  fetchExplores,
+  fetchExploreById,
+  addExplore,
+  deleteExplore,
+  updateExplore,
+} = require("./controllers/explore");
 
 const {
   fetchFeeds,
@@ -32,21 +24,20 @@ const {
 } = require("./controllers/feed");
 
 const {
-  fetchComments,
-  fetchCommentById,
-  fetchCommentByUser,
-  addComment,
-  deleteComment,
-  updateComment,
-} = require("./controllers/comment");
+  fetchLikeds,
+  fetchLikedById,
+  addLiked,
+  deleteLiked,
+  updateLiked,
+} = require("./controllers/liked");
 
 const {
-  fetchExplores,
-  fetchExploreById,
-  addExplore,
-  deleteExplore,
-  updateExplore,
-} = require("./controllers/explore");
+  fetchUsers,
+  fetchUserById,
+  addUser,
+  deleteUser,
+  updateUser,
+} = require("./controllers/user");
 
 // ALL API ROUTES
 
@@ -78,43 +69,38 @@ const routes = [
   },
   {
     method: "GET",
-    url: "/api/posts/:category",
+    url: "/api/posts/category/:category",
     handler: fetchPostsByCategory,
   },
   {
     method: "GET",
-    url: "/api/users",
-    handler: fetchUsers,
-  },
-  {
-    method: "GET",
-    url: "/api/users/:id",
-    handler: fetchUserById,
+    url: "/api/explore",
+    handler: fetchExplores,
   },
   {
     method: "POST",
-    url: "/api/users",
-    handler: addUser,
+    url: "/api/explore",
+    handler: addExplore,
   },
   {
     method: "DELETE",
-    url: "/api/users/:id",
-    handler: deleteUser,
+    url: "/api/explore/:id",
+    handler: deleteExplore,
   },
   {
     method: "PUT",
-    url: "/api/users/:id",
-    handler: updateUser,
+    url: "/api/explore/:id",
+    handler: updateExplore,
+  },
+  {
+    method: "GET",
+    url: "/api/explore/:id",
+    handler: fetchExploreById,
   },
   {
     method: "GET",
     url: "/api/feed",
     handler: fetchFeeds,
-  },
-  {
-    method: "GET",
-    url: "/api/feed/:id",
-    handler: fetchFeedById,
   },
   {
     method: "POST",
@@ -133,13 +119,13 @@ const routes = [
   },
   {
     method: "GET",
-    url: "/api/liked",
-    handler: fetchLikeds,
+    url: "/api/feed/:id",
+    handler: fetchFeedById,
   },
   {
     method: "GET",
-    url: "/api/liked/:id",
-    handler: fetchLikedById,
+    url: "/api/liked",
+    handler: fetchLikeds,
   },
   {
     method: "POST",
@@ -158,58 +144,33 @@ const routes = [
   },
   {
     method: "GET",
-    url: "/api/comments",
-    handler: fetchComments,
+    url: "/api/liked/:id",
+    handler: fetchLikedById,
   },
   {
     method: "GET",
-    url: "/api/comments/:id",
-    handler: fetchCommentById,
-  },
-  {
-    method: "GET",
-    url: "/api/comments/:user_id",
-    handler: fetchCommentByUser,
+    url: "/api/users",
+    handler: fetchUsers,
   },
   {
     method: "POST",
-    url: "/api/comments",
-    handler: addComment,
+    url: "/api/users",
+    handler: addUser,
   },
   {
     method: "DELETE",
-    url: "/api/comments/:id",
-    handler: deleteComment,
+    url: "/api/users/:id",
+    handler: deleteUser,
   },
   {
     method: "PUT",
-    url: "/api/comments/:id",
-    handler: updateComment,
+    url: "/api/users/:id",
+    handler: updateUser,
   },
   {
     method: "GET",
-    url: "/api/explore",
-    handler: fetchExplores,
-  },
-  {
-    method: "GET",
-    url: "/api/explore/:id",
-    handler: fetchExploreById,
-  },
-  {
-    method: "POST",
-    url: "/api/explore",
-    handler: addExplore,
-  },
-  {
-    method: "DELETE",
-    url: "/api/explore/:id",
-    handler: deleteExplore,
-  },
-  {
-    method: "PUT",
-    url: "/api/explore/:id",
-    handler: updateExplore,
+    url: "/api/users/:id",
+    handler: fetchUserById,
   },
 ];
 
