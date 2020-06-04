@@ -23,6 +23,14 @@ const {
   updateFeed,
 } = require("./controllers/feed");
 
+const {
+  fetchLikeds,
+  fetchLikedById,
+  addLiked,
+  deleteLiked,
+  updateLiked,
+} = require("./controllers/liked");
+
 // ALL API ROUTES
 
 const routes = [
@@ -105,6 +113,31 @@ const routes = [
     method: "GET",
     url: "/api/feed/:id",
     handler: fetchFeedById,
+  },
+  {
+    method: "GET",
+    url: "/api/liked",
+    handler: fetchLikeds,
+  },
+  {
+    method: "POST",
+    url: "/api/liked",
+    handler: addLiked,
+  },
+  {
+    method: "DELETE",
+    url: "/api/liked/:id",
+    handler: deleteLiked,
+  },
+  {
+    method: "PUT",
+    url: "/api/liked/:id",
+    handler: updateLiked,
+  },
+  {
+    method: "GET",
+    url: "/api/liked/:id",
+    handler: fetchLikedById,
   },
 ];
 
