@@ -1,16 +1,19 @@
 // Load required packages
 var mongoose = require("mongoose");
 
-const { CommentSchema } = require("./comment");
-const root = "";
+var CommentSchema = new mongoose.Schema({
+  user_id: String,
+  username: String,
+  content: String,
+});
 
 // Define POST SCHEMA
 var PostSchema = new mongoose.Schema({
   user_id: String,
   username: String,
   category: String,
-  profile: { type: String, get: (v) => `${root}${v}` },
-  image: { type: String, get: (v) => `${root}${v}` },
+  profile: { type: String },
+  image: { type: String },
   description: String,
   value: Number,
   waffles_remaining: Number,
