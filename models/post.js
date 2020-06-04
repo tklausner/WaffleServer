@@ -8,7 +8,7 @@ var CommentSchema = new mongoose.Schema({
 });
 
 // Define POST SCHEMA
-var PostSchema = new mongoose.Schema({
+export const PostSchema = new mongoose.Schema({
   user_id: String,
   username: String,
   category: String,
@@ -21,6 +21,5 @@ var PostSchema = new mongoose.Schema({
 });
 
 // Export the Mongoose model
-var Post = mongoose.model("Post", PostSchema);
 
-module.exports = { Post, PostSchema };
+module.exports = mongoose.model("Post", PostSchema);
