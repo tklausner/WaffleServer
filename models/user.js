@@ -5,8 +5,10 @@ const { PostSchema } = require("./post");
 
 // Define USER SCHEMA
 var UserSchema = new mongoose.Schema({
-  user_id: String,
+  fb_id: String,
   username: String,
+  first_name: String,
+  last_name: String,
   saved: { type: [PostSchema] },
   store: { type: [PostSchema] },
 });
