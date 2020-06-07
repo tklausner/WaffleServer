@@ -1,16 +1,14 @@
 // Load required packages
 var mongoose = require("mongoose");
 
-const { PostSchema } = require("./post");
-
 // Define USER SCHEMA
 var UserSchema = new mongoose.Schema({
   fb_id: String,
   username: String,
   first_name: String,
   last_name: String,
-  saved: { type: [PostSchema] },
-  store: { type: [PostSchema] },
+  saved: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
+  store: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
 });
 
 // Export the Mongoose model
