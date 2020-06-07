@@ -58,7 +58,16 @@ const fetchPostsByCategory = async (req, res) => {
   try {
     const { category } = req.params;
     const posts = await Post.find({ category: category });
-    console.log(posts);
+    return posts;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const fetchPostsByUser = async (req, res) => {
+  try {
+    const { user_id } = req.params;
+    const posts = await Post.find({ user_id: user_id });
     return posts;
   } catch (err) {
     console.log(err);
@@ -72,4 +81,5 @@ module.exports = {
   updatePost,
   fetchPostById,
   fetchPostsByCategory,
+  fetchPostsByUser,
 };

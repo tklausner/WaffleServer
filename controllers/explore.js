@@ -54,10 +54,21 @@ const updateExplore = async (req, res) => {
   }
 };
 
+const fetchExploreByUser = async (req, res) => {
+  try {
+    const { user_id } = req.params;
+    const explore = await Explore.find({ user_id: user_id });
+    return explore;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   fetchExplores,
   fetchExploreById,
   addExplore,
   deleteExplore,
   updateExplore,
+  fetchExploreByUser,
 };

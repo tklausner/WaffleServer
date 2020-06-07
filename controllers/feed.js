@@ -54,4 +54,21 @@ const updateFeed = async (req, res) => {
   }
 };
 
-module.exports = { fetchFeeds, fetchFeedById, addFeed, deleteFeed, updateFeed };
+const fetchFeedByUser = async (req, res) => {
+  try {
+    const { user_id } = req.params;
+    const feed = await Feed.find({ user_id: user_id });
+    return feed;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = {
+  fetchFeeds,
+  fetchFeedById,
+  addFeed,
+  deleteFeed,
+  updateFeed,
+  fetchFeedByUser,
+};

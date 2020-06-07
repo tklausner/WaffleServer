@@ -5,6 +5,7 @@ const {
   updatePost,
   fetchPostById,
   fetchPostsByCategory,
+  fetchPostsByUser,
 } = require("./controllers/post");
 
 const {
@@ -13,6 +14,7 @@ const {
   addExplore,
   deleteExplore,
   updateExplore,
+  fetchExploreByUser,
 } = require("./controllers/explore");
 
 const {
@@ -21,6 +23,7 @@ const {
   addFeed,
   deleteFeed,
   updateFeed,
+  fetchFeedByUser,
 } = require("./controllers/feed");
 
 const {
@@ -29,6 +32,7 @@ const {
   addLiked,
   deleteLiked,
   updateLiked,
+  fetchLikedByUser,
 } = require("./controllers/liked");
 
 const {
@@ -37,6 +41,7 @@ const {
   addUser,
   deleteUser,
   updateUser,
+  fetchUserByFBId,
 } = require("./controllers/user");
 
 // ALL API ROUTES
@@ -74,6 +79,11 @@ const routes = [
   },
   {
     method: "GET",
+    url: "/api/posts/user/:user_id",
+    handler: fetchPostsByUser,
+  },
+  {
+    method: "GET",
     url: "/api/explore",
     handler: fetchExplores,
   },
@@ -96,6 +106,11 @@ const routes = [
     method: "GET",
     url: "/api/explore/:id",
     handler: fetchExploreById,
+  },
+  {
+    method: "GET",
+    url: "/api/explore/user/:user_id",
+    handler: fetchExploreByUser,
   },
   {
     method: "GET",
@@ -124,6 +139,11 @@ const routes = [
   },
   {
     method: "GET",
+    url: "/api/feed/user/:user_id",
+    handler: fetchFeedByUser,
+  },
+  {
+    method: "GET",
     url: "/api/liked",
     handler: fetchLikeds,
   },
@@ -149,6 +169,11 @@ const routes = [
   },
   {
     method: "GET",
+    url: "/api/liked/user/:user_id",
+    handler: fetchLikedByUser,
+  },
+  {
+    method: "GET",
     url: "/api/users",
     handler: fetchUsers,
   },
@@ -171,6 +196,11 @@ const routes = [
     method: "GET",
     url: "/api/users/:id",
     handler: fetchUserById,
+  },
+  {
+    method: "GET",
+    url: "/api/users/fb/:fb_id",
+    handler: fetchUserByFBId,
   },
 ];
 

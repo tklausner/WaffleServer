@@ -54,10 +54,21 @@ const updateLiked = async (req, res) => {
   }
 };
 
+const fetchLikedByUser = async (req, res) => {
+  try {
+    const { user_id } = req.params;
+    const liked = await Liked.find({ user_id: user_id });
+    return liked;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   fetchLikeds,
   fetchLikedById,
   addLiked,
   deleteLiked,
   updateLiked,
+  fetchLikedByUser,
 };

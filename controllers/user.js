@@ -54,4 +54,21 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = { fetchUsers, fetchUserById, addUser, deleteUser, updateUser };
+const fetchUserByFBId = async (req, res) => {
+  try {
+    const { fb_id } = req.params;
+    const user = await User.find({ fb_id: fb_id });
+    return user;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = {
+  fetchUsers,
+  fetchUserById,
+  addUser,
+  deleteUser,
+  updateUser,
+  fetchUserByFBId,
+};
