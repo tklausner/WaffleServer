@@ -57,7 +57,7 @@ const updateExplore = async (req, res) => {
 const fetchExploreByUser = async (req, res) => {
   try {
     const { user_id } = req.params;
-    const explore = await Explore.find({ user_id: user_id });
+    const explore = await Explore.findOne({ user_id: user_id });
     return explore;
   } catch (err) {
     console.log(err);

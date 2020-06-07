@@ -57,7 +57,7 @@ const updateUser = async (req, res) => {
 const fetchUserByFBId = async (req, res) => {
   try {
     const { fb_id } = req.params;
-    const user = await User.find({ fb_id: fb_id });
+    const user = await User.findOne({ fb_id: fb_id });
     return user;
   } catch (err) {
     console.log(err);

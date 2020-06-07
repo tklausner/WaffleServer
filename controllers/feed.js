@@ -57,7 +57,7 @@ const updateFeed = async (req, res) => {
 const fetchFeedByUser = async (req, res) => {
   try {
     const { user_id } = req.params;
-    const feed = await Feed.find({ user_id: user_id });
+    const feed = await Feed.findOne({ user_id: user_id });
     return feed;
   } catch (err) {
     console.log(err);
