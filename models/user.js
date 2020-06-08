@@ -7,6 +7,8 @@ var UserSchema = new mongoose.Schema({
   username: String,
   first_name: String,
   last_name: String,
+  profile: String,
+  store_description: String,
   saved: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   store: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
 });
