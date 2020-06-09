@@ -11,6 +11,7 @@ var UserSchema = new mongoose.Schema({
   store_description: String,
   saved: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   store: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
+  waffles: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
 });
 
 // Export the Mongoose model
