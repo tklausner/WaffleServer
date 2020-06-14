@@ -11,11 +11,12 @@ var CommentSchema = new mongoose.Schema({
 var PostSchema = new mongoose.Schema({
   user_id: String,
   username: String,
-  category: String,
+  category: { type: String, default: "none" },
   image: { type: String },
+  profile: { type: String },
   description: String,
-  value: Number,
-  waffles_remaining: Number,
+  value: { type: Number, default: 0 },
+  waffles_remaining: { type: Number, default: 0 },
   comments: [CommentSchema],
 });
 
