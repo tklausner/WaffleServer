@@ -12,7 +12,6 @@ var PostSchema = new mongoose.Schema({
   user_id: String,
   username: String,
   category: String,
-  profile: { type: String },
   image: { type: String },
   description: String,
   value: Number,

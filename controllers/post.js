@@ -57,7 +57,7 @@ const fetchPostById = async (req, res) => {
 const fetchPostsByCategory = async (req, res) => {
   try {
     const { category } = req.params;
-    const posts = await Post.find({ category: category });
+    const posts = await Post.find({ category: category }, "category image");
     return posts;
   } catch (err) {
     console.log(err);
