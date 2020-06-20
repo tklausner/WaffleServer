@@ -16,6 +16,10 @@ var PostSchema = new mongoose.Schema({
   profile: { type: String },
   description: String,
   value: { type: Number, default: 0 },
+  main_spots: { type: Number, default: 0 },
+  mini_spots: { type: Number, default: 0 },
+  main_price: { type: Number, default: 0 },
+  mini_price: { type: Number, default: 0 },
   waffles_remaining: { type: Number, default: 0 },
   comments: [CommentSchema],
 });
