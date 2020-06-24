@@ -1,6 +1,19 @@
 // Load required packages
 var mongoose = require("mongoose");
 
+var ReviewSchema = new mongoose.Schema({
+  user_id: String,
+  rating: Number,
+  content: String,
+});
+
+var ReceiptSchema = new mongoose.Schema({
+  user_id: String,
+  description: Number,
+  amount_paid: Number,
+  total_price: Number,
+});
+
 // Define USER SCHEMA
 var UserSchema = new mongoose.Schema({
   fb_id: String,
@@ -12,6 +25,8 @@ var UserSchema = new mongoose.Schema({
   saved: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   store: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   waffles: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
+  reviews: { type: [ReviewSchema] },
+  receipts: { type: [ReceiptSchema] },
 });
 
 // Export the Mongoose model
