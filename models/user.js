@@ -9,7 +9,7 @@ var ReviewSchema = new mongoose.Schema({
 
 var ReceiptSchema = new mongoose.Schema({
   user_id: String,
-  description: Number,
+  post_id: String,
   amount_paid: Number,
   total_price: Number,
 });
