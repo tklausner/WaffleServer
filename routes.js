@@ -44,6 +44,16 @@ const {
   fetchUserByFBId,
 } = require("./controllers/user");
 
+const {
+  fetchComments,
+  fetchCommentById,
+  addComment,
+  deleteComment,
+  updateComment,
+  fetchCommentsByUser,
+  fetchCommentsByPost,
+} = require("./controllers/comment");
+
 // ALL API ROUTES
 
 const routes = [
@@ -201,6 +211,41 @@ const routes = [
     method: "GET",
     url: "/api/users/fb/:fb_id",
     handler: fetchUserByFBId,
+  },
+  {
+    method: "GET",
+    url: "/api/comments",
+    handler: fetchComments,
+  },
+  {
+    method: "POST",
+    url: "/api/comments",
+    handler: addComment,
+  },
+  {
+    method: "DELETE",
+    url: "/api/comments/:id",
+    handler: deleteComment,
+  },
+  {
+    method: "PUT",
+    url: "/api/comments/:id",
+    handler: updateComment,
+  },
+  {
+    method: "GET",
+    url: "/api/comments/:id",
+    handler: fetchCommentById,
+  },
+  {
+    method: "GET",
+    url: "/api/comments/post/:post_id",
+    handler: fetchCommentsByPost,
+  },
+  {
+    method: "GET",
+    url: "/api/comments/user/:user_id",
+    handler: fetchCommentsByUser,
   },
 ];
 

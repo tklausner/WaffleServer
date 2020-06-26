@@ -1,12 +1,6 @@
 // Load required packages
 var mongoose = require("mongoose");
 
-var CommentSchema = new mongoose.Schema({
-  user_id: String,
-  username: String,
-  content: String,
-});
-
 // Define POST SCHEMA
 var PostSchema = new mongoose.Schema({
   user_id: String,
@@ -21,7 +15,7 @@ var PostSchema = new mongoose.Schema({
   main_price: { type: Number, default: 0 },
   mini_price: { type: Number, default: 0 },
   waffles_remaining: { type: Number, default: 0 },
-  comments: [CommentSchema],
+  comments: { type: [mongoose.Schema.Types.ObjectId], ref: "Comment" },
 });
 
 // Export the Mongoose model
