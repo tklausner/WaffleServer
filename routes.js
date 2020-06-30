@@ -54,6 +54,15 @@ const {
   fetchCommentsByPost,
 } = require("./controllers/comment");
 
+const {
+  fetchPayments,
+  fetchPaymentById,
+  addPayment,
+  deletePayment,
+  updatePayment,
+  fetchPaymentByUser,
+} = require("./controllers/payment");
+
 // ALL API ROUTES
 
 const routes = [
@@ -246,6 +255,36 @@ const routes = [
     method: "GET",
     url: "/api/comments/user/:user_id",
     handler: fetchCommentsByUser,
+  },
+  {
+    method: "GET",
+    url: "/api/payment",
+    handler: fetchPayments,
+  },
+  {
+    method: "POST",
+    url: "/api/payment",
+    handler: addPayment,
+  },
+  {
+    method: "DELETE",
+    url: "/api/payment/:id",
+    handler: deletePayment,
+  },
+  {
+    method: "PUT",
+    url: "/api/payment/:id",
+    handler: updatePayment,
+  },
+  {
+    method: "GET",
+    url: "/api/payment/:id",
+    handler: fetchPaymentById,
+  },
+  {
+    method: "GET",
+    url: "/api/payment/user/:user_id",
+    handler: fetchPaymentByUser,
   },
 ];
 
