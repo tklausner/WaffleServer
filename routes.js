@@ -61,7 +61,7 @@ const {
   deletePayment,
   updatePayment,
   fetchPaymentByUser,
-} = require("./controllers/feed");
+} = require("./controllers/payment");
 
 // ALL API ROUTES
 
