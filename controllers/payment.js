@@ -4,8 +4,8 @@ const Payment = require("../models/payment");
 
 const fetchPayments = async (req, res) => {
   try {
-    const Payments = await Payment.find();
-    return Payments;
+    const payments = await Payment.find();
+    return payments;
   } catch (err) {
     console.log(err);
   }
@@ -14,8 +14,8 @@ const fetchPayments = async (req, res) => {
 const fetchPaymentById = async (req, res) => {
   try {
     const { id } = req.params;
-    const Payment = await Payment.findById(id);
-    return Payment;
+    const payment = await Payment.findById(id);
+    return payment;
   } catch (err) {
     console.log(err);
   }
@@ -33,8 +33,8 @@ const addPayment = async (req, res) => {
 const deletePayment = async (req, res) => {
   try {
     const { id } = req.params;
-    const Payment = await Payment.findByIdAndRemove(id);
-    return Payment;
+    const payment = await Payment.findByIdAndRemove(id);
+    return payment;
   } catch (err) {
     console.log(err);
   }
@@ -43,8 +43,8 @@ const deletePayment = async (req, res) => {
 const updatePayment = async (req, res) => {
   try {
     const { id } = req.params;
-    const Payment = req.body;
-    const updatedPayment = await Payment.findByIdAndUpdate(id, Payment, {
+    const payment = req.body;
+    const updatedPayment = await Payment.findByIdAndUpdate(id, payment, {
       new: true,
     });
     return updatedPayment;
@@ -56,8 +56,8 @@ const updatePayment = async (req, res) => {
 const fetchPaymentByUser = async (req, res) => {
   try {
     const { user_id } = req.params;
-    const Payments = await Payment.find({ user_id: user_id });
-    return Payments;
+    const payment = await Payment.findOne({ user_id: user_id });
+    return payment;
   } catch (err) {
     console.log(err);
   }
