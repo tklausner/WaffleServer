@@ -90,6 +90,11 @@ const routes = [
   },
   {
     method: "GET",
+    url: "/api/posts/waffle/:id",
+    handler: fetchWaffleWinner,
+  },
+  {
+    method: "GET",
     url: "/api/explore",
     handler: fetchExplores,
   },
