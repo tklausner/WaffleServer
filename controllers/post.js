@@ -74,18 +74,6 @@ const fetchPostsByUser = async (req, res) => {
   }
 };
 
-const fetchWaffleWinner = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const post = await Post.findById(id);
-    const { wafflers } = post;
-    let winner = waffleRandomizer(wafflers);
-    return winner;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 const waffleRandomizer = (wafflers) => {
   try {
     const size = wafflers.length;
@@ -94,6 +82,18 @@ const waffleRandomizer = (wafflers) => {
     console.log("R", r);
     console.log("wafflers[r]", wafflers[r]);
     return wafflers[r];
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const fetchWaffleWinner = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const post = await Post.findById(id);
+    const { wafflers } = post;
+    let winner = waffleRandomizer(wafflers);
+    return winner;
   } catch (err) {
     console.log(err);
   }
