@@ -79,7 +79,8 @@ const fetchWaffleWinner = async (req, res) => {
     const { id } = req.params;
     const { wafflers } = await Post.findById(id);
     const size = wafflers.length;
-    let r = random(0, size);
+    let r = Math.floor(Math.random() * size);
+    console.log("WAF", wafflers[r]);
     return wafflers[r];
   } catch (err) {
     console.log(err);
