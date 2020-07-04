@@ -14,7 +14,6 @@ var PostSchema = new mongoose.Schema({
   main_spots: { type: Number, default: 0 },
   main_price: { type: Number, default: 0 },
   waffles_remaining: { type: Number, default: 0 },
-  wafflers: { type: [mongoose.Schema.Types.ObjectId], ref: "User" },
 });
 
 // Export the Mongoose model
