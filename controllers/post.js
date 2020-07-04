@@ -74,6 +74,18 @@ const fetchPostsByUser = async (req, res) => {
   }
 };
 
+const fetchWaffleWinner = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { wafflers } = await Post.findById(id);
+    const size = wafflers.length;
+    let r = random(0, size);
+    return wafflers[r];
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   fetchPosts,
   addPost,
