@@ -6,6 +6,7 @@ const {
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
+  fetchWaffleWinner,
 } = require("./controllers/post");
 
 const {
