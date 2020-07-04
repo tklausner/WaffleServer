@@ -74,18 +74,14 @@ const fetchPostsByUser = async (req, res) => {
   }
 };
 
-const waffleRandomizer = (wafflers) => {
-  try {
-    const size = wafflers.length;
-    console.log("SIZE", size);
-    let r = int(random(0, size));
-    console.log("R", r);
-    console.log("wafflers[r]", wafflers[r]);
-    return wafflers[r];
-  } catch (err) {
-    console.log(err);
-  }
-};
+function waffleRandomizer(wafflers) {
+  const size = wafflers.length;
+  console.log("SIZE", size);
+  let r = int(random(0, size));
+  console.log("R", r);
+  console.log("wafflers[r]", wafflers[r]);
+  return wafflers[r];
+}
 
 const fetchWaffleWinner = async (req, res) => {
   try {
