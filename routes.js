@@ -88,11 +88,6 @@ const routes = [
     handler: fetchPostsByUser,
   },
   {
-    method: "PUT",
-    url: "api/posts/waffle/:id",
-    handler: fetchWaffleWinner,
-  },
-  {
     method: "GET",
     url: "/api/explore",
     handler: fetchExplores,
