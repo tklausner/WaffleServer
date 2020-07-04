@@ -6,7 +6,6 @@ const {
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
-  fetchWaffleWinner,
 } = require("./controllers/post");
 
 const {
@@ -91,11 +90,6 @@ const routes = [
     method: "GET",
     url: "/api/posts/:id",
     handler: fetchPostById,
-  },
-  {
-    method: "GET",
-    url: "/api/posts/category/:category",
-    handler: fetchPostsByCategory,
   },
   {
     method: "GET",

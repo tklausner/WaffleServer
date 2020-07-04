@@ -95,5 +95,4 @@ module.exports = {
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
-  fetchWaffleWinner,
 };
