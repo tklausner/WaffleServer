@@ -45,26 +45,6 @@ const updatePost = async (req, res) => {
   }
 };
 
-const updatePostWafflers = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const post = req.body;
-    const wafflersMap = new Map(JSON.parse(post.wafflers));
-    console.log("{BACKEND}", wafflersMap);
-    const updatedPost = await Post.findOneAndUpdate(
-      { _id: id },
-      { wafflers: wafflersMap },
-      {
-        new: true,
-      }
-    );
-    console.log("{UPDAtED POSt}", updatedPost);
-    return updatedPost;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 const fetchPostById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -117,7 +97,6 @@ module.exports = {
   addPost,
   deletePost,
   updatePost,
-  updatePostWafflers,
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
