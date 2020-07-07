@@ -51,8 +51,8 @@ const updatePostWafflers = async (req, res) => {
     const post = req.body;
     const wafflersMap = new Map(JSON.parse(post.wafflers));
     console.log("{BACKEND}", wafflersMap);
-    const updatedPost = await Post.findByIdAndUpdate(
-      id,
+    const updatedPost = await Post.findOneAndUpdate(
+      { _id: id },
       { wafflers: wafflersMap },
       {
         new: true,
