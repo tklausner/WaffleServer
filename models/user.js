@@ -27,6 +27,7 @@ var UserSchema = new mongoose.Schema({
   waffles: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   reviews: { type: [ReviewSchema] },
   receipts: { type: [ReceiptSchema] },
+  token: String,
 });
 
 // Export the Mongoose model
