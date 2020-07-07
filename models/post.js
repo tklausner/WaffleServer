@@ -21,6 +21,7 @@ var PostSchema = new mongoose.Schema(
         username: String,
         user_id: mongoose.Schema.Types.ObjectId,
       },
+      default: new Map(),
     },
   },
   {
