@@ -16,13 +16,11 @@ var PostSchema = new mongoose.Schema(
     waffles_remaining: { type: Number, default: 0 },
     comments: { type: [mongoose.Schema.Types.ObjectId], ref: "Comment" },
     wafflers: {
-      type: [
-        {
-          spot_number: Number,
-          username: String,
-          user_id: mongoose.Schema.Types.ObjectId,
-        },
-      ],
+      type: Map,
+      of: {
+        username: String,
+        user_id: mongoose.Schema.Types.ObjectId,
+      },
     },
   },
   {
