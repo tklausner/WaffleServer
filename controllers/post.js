@@ -35,7 +35,7 @@ const updatePost = async (req, res) => {
   try {
     const { id } = req.params;
     const post = req.body;
-    console.log("{BACKEND}", req);
+    console.log("{BACKEND}", post);
     const updatedPost = await Post.findByIdAndUpdate(id, post, {
       new: true,
     });
