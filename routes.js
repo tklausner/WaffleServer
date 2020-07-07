@@ -3,6 +3,7 @@ const {
   addPost,
   deletePost,
   updatePost,
+  updatePostWafflers,
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
@@ -77,6 +78,11 @@ const routes = [
     method: "PUT",
     url: "/api/posts/:id",
     handler: updatePost,
+  },
+  {
+    method: "PUT",
+    url: "/api/posts/waffle/:id",
+    handler: updatePostWafflers,
   },
   {
     method: "GET",

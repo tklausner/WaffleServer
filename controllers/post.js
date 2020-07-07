@@ -45,6 +45,24 @@ const updatePost = async (req, res) => {
   }
 };
 
+const updatePostWafflers = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const post = req.body;
+    console.log("{BACKEND}", wafflers);
+    const updatedPost = await Post.findByIdAndUpdate(
+      id,
+      { wafflers: post.wafflers },
+      {
+        new: true,
+      }
+    );
+    return updatedPost;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const fetchPostById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -97,6 +115,7 @@ module.exports = {
   addPost,
   deletePost,
   updatePost,
+  updatePostWafflers,
   fetchPostById,
   fetchPostsByCategory,
   fetchPostsByUser,
