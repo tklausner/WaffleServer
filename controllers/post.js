@@ -49,14 +49,10 @@ const updatePostWafflers = async (req, res) => {
   try {
     const { id } = req.params;
     const post = req.body;
-    console.log("{BACKEND}", wafflers);
-    const updatedPost = await Post.findByIdAndUpdate(
-      id,
-      { wafflers: post.wafflers },
-      {
-        new: true,
-      }
-    );
+    console.log("{BACKEND}", post);
+    const updatedPost = await Post.findByIdAndUpdate(id, post, {
+      new: true,
+    });
     return updatedPost;
   } catch (err) {
     console.log(err);
