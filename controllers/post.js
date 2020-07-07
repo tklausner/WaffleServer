@@ -49,10 +49,15 @@ const updatePostWafflers = async (req, res) => {
   try {
     const { id } = req.params;
     const post = req.body;
-    console.log("{BACKEND}", post);
-    const updatedPost = await Post.findByIdAndUpdate(id, post, {
-      new: true,
-    });
+    const wafflersMap = new Map(JSON.parse(post.wafflers));
+    console.log("{BACKEND}", wafflersMap);
+    const updatedPost = await Post.findByIdAndUpdate(
+      id,
+      { wafflers: wafflersMap },
+      {
+        new: true,
+      }
+    );
     return updatedPost;
   } catch (err) {
     console.log(err);
