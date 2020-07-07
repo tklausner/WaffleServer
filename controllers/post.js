@@ -58,6 +58,7 @@ const updatePostWafflers = async (req, res) => {
         new: true,
       }
     );
+    console.log("{UPDAtED POSt}", updatedPost);
     return updatedPost;
   } catch (err) {
     console.log(err);
