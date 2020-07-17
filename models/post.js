@@ -24,9 +24,6 @@ var PostSchema = new mongoose.Schema(
         },
       ],
     },
-    topWafflers: {
-      type: [{ username: String, spots: Number }],
-    },
   },
   {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
