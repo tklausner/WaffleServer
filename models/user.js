@@ -25,7 +25,7 @@ var UserSchema = new mongoose.Schema({
   saved: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   store: { type: [mongoose.Schema.Types.ObjectId], ref: "Post" },
   waffles: {
-    type: [{ id: mongoose.Schema.Types.ObjectId, spots: Number }],
+    type: [{ post_id: mongoose.Schema.Types.ObjectId, spots: Number }],
   },
   reviews: { type: [ReviewSchema] },
   receipts: { type: [ReceiptSchema] },
