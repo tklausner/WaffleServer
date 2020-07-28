@@ -1,11 +1,11 @@
 const Giveaway = require("../models/giveaway");
 
-// Giveaway CONTROLLER
+// USER CONTROLLER
 
 const fetchGiveaways = async (req, res) => {
   try {
-    const Giveaways = await Giveaway.find();
-    return Giveaways;
+    const giveaways = await Giveaway.find();
+    return giveaways;
   } catch (err) {
     console.log(err);
   }
@@ -14,8 +14,8 @@ const fetchGiveaways = async (req, res) => {
 const fetchGiveawayById = async (req, res) => {
   try {
     const { id } = req.params;
-    const Giveaway = await Giveaway.findById(id);
-    return Giveaway;
+    const giveaway = await Giveaway.findById(id);
+    return giveaway;
   } catch (err) {
     console.log(err);
   }
@@ -33,8 +33,8 @@ const addGiveaway = async (req, res) => {
 const deleteGiveaway = async (req, res) => {
   try {
     const { id } = req.params;
-    const Giveaway = await Giveaway.findByIdAndRemove(id);
-    return Giveaway;
+    const giveaway = await Giveaway.findByIdAndRemove(id);
+    return giveaway;
   } catch (err) {
     console.log(err);
   }
@@ -43,8 +43,8 @@ const deleteGiveaway = async (req, res) => {
 const updateGiveaway = async (req, res) => {
   try {
     const { id } = req.params;
-    const Giveaway = req.body;
-    const updatedGiveaway = await Giveaway.findByIdAndUpdate(id, Giveaway, {
+    const giveaway = req.body;
+    const updatedGiveaway = await Giveaway.findByIdAndUpdate(id, giveaway, {
       new: true,
     });
     return updatedGiveaway;
