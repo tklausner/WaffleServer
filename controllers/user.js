@@ -33,7 +33,6 @@ const addUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    // CHANGE TO findOneAndDelete if id causes errors
     const user = await User.findByIdAndRemove(id);
     return user;
   } catch (err) {
